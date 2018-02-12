@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hello Ionic</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <h3>New Char page</h3>
+
+  <ion-item>
+    <ion-label fixed>Char Name</ion-label>
+    <ion-input [(ngModel)] = "charName" type="text" value=""></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Class</ion-label>
+    <ion-input [(ngModel)] = "class" type="text" value=""></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Race</ion-label>
+    <ion-input [(ngModel)] = "race" type="text" value=""></ion-input>
+  </ion-item>
+  <button ion-button color="primary" (click)='createCharacter();'>Create Character</button>
+
+
+</ion-content>
