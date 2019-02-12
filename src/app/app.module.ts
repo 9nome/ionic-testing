@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { NewCharacterPage } from '../pages/new-char/new-char';
 import {CharacterListPage} from '../pages/character-list/character-list'
+import { MessageProvider } from '../providers/message/message';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {CharacterListPage} from '../pages/character-list/character-list'
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MessageProvider
   ]
 })
 export class AppModule {}

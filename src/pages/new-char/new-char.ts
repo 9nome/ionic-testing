@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Character} from '../../character';
 import {Storage} from '@ionic/storage';
+import { MessageProvider } from '../../providers/message/message';
 
 @Component({
   selector: 'page-new-char',
   templateUrl: 'new-char.html'
 })
-export class NewCharacterPage {
+export class NewCharacterPage implements OnInit {
+
+  conversation:  string[];
 
   //may not need this after swapping to external class (character.ts)
   charName: string = "default name";
@@ -18,7 +21,7 @@ export class NewCharacterPage {
   newChar: Character;
   //= {name ='gnome',race ='also gnome', charClass='bard'}
 
-  constructor(private storage: Storage) {
+  constructor(private storage: Storage, public messages:MessageProvider) {
 
   }
 // json ex : { "name":"John", "age":30, "car":null };
@@ -35,6 +38,10 @@ export class NewCharacterPage {
    this.storage.get(this.newChar.name).then((data) => {
     console.log('stored:'+data);
   });
+  }
+
+  ngOnInit(){
+    this.conversation = this.messages.messages;
   }
 
 
