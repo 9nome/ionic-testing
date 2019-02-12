@@ -21,7 +21,11 @@ export class HelloIonicPage implements OnInit{
   addMessage(){
     this.message.add("test "+this.count);
     this.count++;
-    this.conversation=this.message.messages;
+    this.conversation=this.message.messages; //this doesn't work as one might expect, the data binding does not instantly reflect in the ui when accessing this service variable. Not 100% sure why, think probably async behavior, might need to use observables
+  }
+
+  testCount(){
+    this.count++;
   }
 
 

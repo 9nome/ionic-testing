@@ -26,6 +26,11 @@
   <button id="imabutton2" ion-button color="primary" (click)='addMessage();' >add message</button>
   <br>
   <br>
-  {{conversation}}
+  {{conversation}} <!-- does the same as below-->
+  {{this.message.messages}}
+
+  <button id="imabutton2" ion-button color="primary" (click)='testCount();' >test count</button>
+
+  {{count}}
 
 </ion-content>
